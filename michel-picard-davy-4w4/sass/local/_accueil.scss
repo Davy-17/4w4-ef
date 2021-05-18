@@ -55,36 +55,54 @@ Liste des blocs de cours par type_de_cours
         display : flex;
         flex-direction: row;
         flex-wrap: wrap;
+
         article {
             display : flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
             border : 1px solid #aaa;
-            width : 95%;
+            width : 15%;
             margin : 1%;
             padding  : 1rem;
             text-align : center;
+            
             p {
                 margin: .4rem;
                 font-size: 1rem;
+                display: none;
             }
             a {
-                font-size: 1.5rem;
+                font-size: 1rem;
                 font-weight: bold;
                 text-decoration: none;
+                transform: rotate(-90deg);
             }
         }
         @include tablet {
             article {
                 width : 47%;
                 margin : 1%;
+                p{
+                    display: block;
+                }
+                a{
+                    font-size: 1.5rem;
+                    transform: rotate(0deg);
+                }
             }
         }
         @include desktop {
             article {
             width : 31%;
             margin : 1%;
+            p{
+                font-size: 1.5rem;
+                display: block;
+            }
+            a{
+                transform: rotate(0deg);
+            }
             }
         }
     }

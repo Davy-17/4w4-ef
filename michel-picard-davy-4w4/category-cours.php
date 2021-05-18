@@ -44,8 +44,7 @@ get_header();
 						<?php endif; ?>
 					<?php endif; ?>	
 
-
-					<h2><?php echo $tPropriété['session'] ?></h2>
+					<h2><?php echo $tPropriété['session'] ?></h2>	
 					<section <?php echo class_composant($tPropriété['session']) ?>>
 					
 				<?php endif ?>	

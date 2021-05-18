@@ -1172,7 +1172,7 @@ Liste des blocs de cours par type_de_cours
   justify-content: space-between;
   align-items: center;
   border: 1px solid #aaa;
-  width: 95%;
+  width: 15%;
   margin: 1%;
   padding: 1rem;
   text-align: center;
@@ -1181,12 +1181,14 @@ Liste des blocs de cours par type_de_cours
 .cours section.bloc article p {
   margin: .4rem;
   font-size: 1rem;
+  display: none;
 }
 
 .cours section.bloc article a {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
   text-decoration: none;
+  transform: rotate(-90deg);
 }
 
 @media (min-width: 800px) {
@@ -1194,12 +1196,26 @@ Liste des blocs de cours par type_de_cours
     width: 47%;
     margin: 1%;
   }
+  .cours section.bloc article p {
+    display: block;
+  }
+  .cours section.bloc article a {
+    font-size: 1.5rem;
+    transform: rotate(0deg);
+  }
 }
 
 @media (min-width: 1200px) {
   .cours section.bloc article {
     width: 31%;
     margin: 1%;
+  }
+  .cours section.bloc article p {
+    font-size: 1.5rem;
+    display: block;
+  }
+  .cours section.bloc article a {
+    transform: rotate(0deg);
   }
 }
 
