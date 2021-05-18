@@ -1151,6 +1151,10 @@ body.home::after {
 /* --------------------------------------------------------------------------------------- 
 Liste des blocs de cours par type_de_cours
 ------------------------------------------------------------------------------------------ */
+.coursOption {
+  background-color: red;
+}
+
 .cours {
   display: flex;
   flex-direction: column;
