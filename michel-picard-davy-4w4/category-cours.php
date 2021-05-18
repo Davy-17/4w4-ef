@@ -28,16 +28,34 @@ get_header();
 			<section class="cours">
 			<?php
 			/* Start the Loop */
-			$precedent = "XXXXXX";
+            $precedent = "XXXXXX";
+			$chaine_bouton_radio = '';
+			//global $tProprieté;
 			while ( have_posts() ) :
 				the_post();
-				convertirTableau($tPropriété);
-				
+                convertirTableau($tPropriété);
+				//print_r($tPropriété);
+				if ($tPropriété['session'] != $precedent): 
+					if ("XXXXXX" != $precedent)	: ?>
+						</section>
+						
+						<?php if (in_array($precedent, ['Web', 'Jeu', 'Spécifique', 'Image 2d/3d',' Conception'])) : ?>
+							
+						<?php endif; ?>
+					<?php endif; ?>	
 
-				get_template_part( 'template-parts/content', 'cours' );
 
+					<h2><?php echo $tPropriété['session'] ?></h2>
+					<section <?php echo class_composant($tPropriété['session']) ?>>
+					
+				<?php endif ?>	
+
+				<?php if (in_array($tPropriété['typeCours'], ['Web', 'Jeu', 'Spécifique', 'Image 2d/3d',' Conception']) ) : 
+		
+						get_template_part( 'template-parts/content', 'cours' ); 
+				endif;	
+				$precedent = $tPropriété['session'];
 			endwhile;?>
-
 			</section>
 
 		<?php endif; ?>
@@ -69,4 +87,16 @@ function convertirTableau(&$tPropriété)
 	$tPropriété['titrePartiel'] = substr($tPropriété['titre'],8,-6);
 	$tPropriété['session'] = substr($tPropriété['titre'], 4,1);
 	$tPropriété['typeCours'] = get_field('type_de_cours');
+}
+function class_composant($typeCours){
+
+	if (in_array($typeCours, ['Web', 'Jeu', 'Spécifique'])){
+		return 'class="carrousel-2"';
+	}
+	elseif ($typeCours == 'Projets'){
+		return 'class="galerie"';
+	}
+	else {
+		return 'class="bloc"';
+	}
 }

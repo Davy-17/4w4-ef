@@ -43,7 +43,7 @@ body.home::after{
 /* --------------------------------------------------------------------------------------- 
 Liste des blocs de cours par type_de_cours
 ------------------------------------------------------------------------------------------ */
-.home .cours {
+.cours {
     display : flex;
     flex-direction: column;
     h2 {
@@ -89,6 +89,7 @@ Liste des blocs de cours par type_de_cours
         }
     }
 }
+
 
 .home .nouvelles {
     display: flex;

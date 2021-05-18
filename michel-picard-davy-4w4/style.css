@@ -1151,22 +1151,22 @@ body.home::after {
 /* --------------------------------------------------------------------------------------- 
 Liste des blocs de cours par type_de_cours
 ------------------------------------------------------------------------------------------ */
-.home .cours {
+.cours {
   display: flex;
   flex-direction: column;
 }
 
-.home .cours h2 {
+.cours h2 {
   text-align: center;
 }
 
-.home .cours section.bloc {
+.cours section.bloc {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.home .cours section.bloc article {
+.cours section.bloc article {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1178,26 +1178,26 @@ Liste des blocs de cours par type_de_cours
   text-align: center;
 }
 
-.home .cours section.bloc article p {
+.cours section.bloc article p {
   margin: .4rem;
   font-size: 1rem;
 }
 
-.home .cours section.bloc article a {
+.cours section.bloc article a {
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
 }
 
 @media (min-width: 800px) {
-  .home .cours section.bloc article {
+  .cours section.bloc article {
     width: 47%;
     margin: 1%;
   }
 }
 
 @media (min-width: 1200px) {
-  .home .cours section.bloc article {
+  .cours section.bloc article {
     width: 31%;
     margin: 1%;
   }
